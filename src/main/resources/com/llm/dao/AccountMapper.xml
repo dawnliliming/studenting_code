@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 命名空间为绑定接口的全类名 -->
+<mapper namespace="com.llm.dao.AccountMapper">
+
+    <resultMap id="userMap" type="com.llm.pojo.User">
+        <result property="name" column="username"/>
+    </resultMap>
+
+    <select id="findUser" resultMap="userMap">
+        SELECT * from user where id = #{uid}
+    </select>
+
+     <!--一对一查询 -->
+    <resultMap type="com.llm.pojo.Account" id="gradeRM">
+        <id column="id" property="id"/>
+        <result column="money" property="money"/>
+        <association property="user" column="uid" javaType="com.llm.pojo.User" select="findUser"/>
+    </resultMap>
+
+    <select id="findUserAndAccount" resultMap="gradeRM">
+        SELECT * from account
+    </select>
+
+</mapper>

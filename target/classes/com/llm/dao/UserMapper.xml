@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 命名空间为绑定接口的全类名 -->
+<mapper namespace="com.llm.dao.UserMapper">
+
+    <!-- 定义二级缓存-->
+    <cache/>
+
+    <!-- id 为接口定义的方法名  resultType 为实体类的全类名  #{userId} 中的参数和方法名一致 -->
+
+    
+    <resultMap id="UserMap" type="com.llm.pojo.User">
+        <result column="username" property="name"></result>
+    </resultMap>
+    
+
+    <!-- 注意：resultMap不是resultType-->
+    <select id="findUserById" resultMap="UserMap">
+        select * from user where id = #{Id}
+    </select>
+
+    <select id="findUserListByLimit" parameterType="map" resultType="com.llm.pojo.User">
+        select * from user limit #{startIndex},#{pageSize}
+    </select>
+
+
+
+</mapper>

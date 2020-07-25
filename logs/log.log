@@ -1,0 +1,24 @@
+2020-07-09 12:11:10  [ main:0 ] - [ DEBUG ]  Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2020-07-09 12:11:10  [ main:8 ] - [ DEBUG ]  Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2020-07-09 12:11:10  [ main:47 ] - [ DEBUG ]  PooledDataSource forcefully closed/removed all connections.
+2020-07-09 12:11:10  [ main:48 ] - [ DEBUG ]  PooledDataSource forcefully closed/removed all connections.
+2020-07-09 12:11:10  [ main:49 ] - [ DEBUG ]  PooledDataSource forcefully closed/removed all connections.
+2020-07-09 12:11:10  [ main:50 ] - [ DEBUG ]  PooledDataSource forcefully closed/removed all connections.
+2020-07-09 12:11:10  [ main:245 ] - [ DEBUG ]  Opening JDBC Connection
+2020-07-09 12:11:11  [ main:542 ] - [ DEBUG ]  Created connection 1754638213.
+2020-07-09 12:11:11  [ main:543 ] - [ DEBUG ]  Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@6895a785]
+2020-07-09 12:11:11  [ main:546 ] - [ DEBUG ]  ==>  Preparing: select * from user where id = ? 
+2020-07-09 12:11:11  [ main:594 ] - [ DEBUG ]  ==> Parameters: 42(Integer)
+2020-07-09 12:11:11  [ main:639 ] - [ DEBUG ]  <==      Total: 1
+2020-07-09 12:12:40  [ main:0 ] - [ DEBUG ]  Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2020-07-09 12:12:40  [ main:8 ] - [ DEBUG ]  Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2020-07-09 12:12:40  [ main:38 ] - [ DEBUG ]  PooledDataSource forcefully closed/removed all connections.
+2020-07-09 12:12:40  [ main:39 ] - [ DEBUG ]  PooledDataSource forcefully closed/removed all connections.
+2020-07-09 12:12:40  [ main:40 ] - [ DEBUG ]  PooledDataSource forcefully closed/removed all connections.
+2020-07-09 12:12:40  [ main:41 ] - [ DEBUG ]  PooledDataSource forcefully closed/removed all connections.
+2020-07-09 12:12:40  [ main:181 ] - [ DEBUG ]  Opening JDBC Connection
+2020-07-09 12:12:40  [ main:484 ] - [ DEBUG ]  Created connection 1754638213.
+2020-07-09 12:12:40  [ main:484 ] - [ DEBUG ]  Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@6895a785]
+2020-07-09 12:12:40  [ main:487 ] - [ DEBUG ]  ==>  Preparing: select * from user where id = ? 
+2020-07-09 12:12:40  [ main:517 ] - [ DEBUG ]  ==> Parameters: 42(Integer)
+2020-07-09 12:12:40  [ main:562 ] - [ DEBUG ]  <==      Total: 1

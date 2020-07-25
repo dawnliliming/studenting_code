@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - test@localhost" uuid="be962eca-e20b-4479-a168-68d963c75944">
+    <database-info product="MySQL" version="5.5.40" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.47 ( Revision: fe1903b1ecb4a96a917f7ed3190d80c049b1de29 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="test"/>
+    <table name="account" schema="" catalog="test" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="57yW5Y+3"/>
+      <column name="UID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="55So5oi357yW5Y+3"/>
+      <column name="MONEY" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8" remarks="6YeR6aKd"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <foreign-key name="FK_Reference_8" columns="UID" ref-table="user" ref-schema="" ref-catalog="test" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_Reference_8" unique="false" columns="UID"/>
+    </table>
+    <table name="role" schema="" catalog="test" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="57yW5Y+3"/>
+      <column name="ROLE_NAME" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12" remarks="6KeS6Imy5ZCN56ew"/>
+      <column name="ROLE_DESC" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12" remarks="6KeS6Imy5o+P6L+w"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <exported-key name="FK_Reference_10" table="user_role" schema="" catalog="test" columns="RID"/>
+    </table>
+    <table name="user" schema="" catalog="test" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="username" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12" remarks="55So5oi35ZCN56ew"/>
+      <column name="birthday" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="55Sf5pel"/>
+      <column name="sex" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1" remarks="5oCn5Yir"/>
+      <column name="address" sqlType="VARCHAR" precision="256" scale="0" nullable="true" jdbcType="12" remarks="5Zyw5Z2A"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_Reference_8" table="account" schema="" catalog="test" columns="UID"/>
+      <exported-key name="FK_Reference_9" table="user_role" schema="" catalog="test" columns="UID"/>
+    </table>
+    <table name="user_role" schema="" catalog="test" type="TABLE">
+      <column name="UID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="55So5oi357yW5Y+3"/>
+      <column name="RID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="6KeS6Imy57yW5Y+3"/>
+      <primary-key name="PRIMARY" columns="UID,RID"/>
+      <foreign-key name="FK_Reference_10" columns="RID" ref-table="role" ref-schema="" ref-catalog="test" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_Reference_9" columns="UID" ref-table="user" ref-schema="" ref-catalog="test" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_Reference_10" unique="false" columns="RID"/>
+    </table>
+  </data-source>
+</component>

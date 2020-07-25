@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 命名空间为绑定接口的全类名 -->
+<mapper namespace="com.llm.dao.RoleMapper">
+
+    <resultMap id="userRoles" type="com.llm.pojo.Role">
+        <result column="rdesc" property="roleDesc"/>
+        <result column="rname" property="roleName"/>
+        <collection property="users" ofType="com.llm.pojo.User">
+            <result column="uid" property="id"/>
+            <result column="uname" property="name"/>
+            <result column="sex" property="sex"/>
+        </collection>
+    </resultMap>
+
+    <select id="findRolesByUser" resultMap="userRoles">
+       SELECT user.`id` AS uid,role.`ROLE_DESC` AS rdesc,role.`ROLE_NAME` AS rname,user.`username` AS uname,user.`sex` AS sex
+FROM role,USER,user_role
+WHERE role.`ID` = user_role.`RID` AND user.`id` = user_role.`UID`;
+    </select>
+
+</mapper>
